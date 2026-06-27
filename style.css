@@ -719,12 +719,9 @@ body{
     z-index:99999;
     box-shadow:0 0 15px #38bdf8;
 }
-a{
-    text-decoration: none;
-}
+
 .contact-card a{
     text-decoration: none !important;
-    color: #ffffff;
 }
 
 .contact-card a:hover{
