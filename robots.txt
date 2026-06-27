@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sahilshah333e33e3-sys.github.io/SahilPortfolio/sitemap.xml

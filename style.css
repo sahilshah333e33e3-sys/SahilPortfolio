@@ -728,3 +728,39 @@ body{
     text-decoration: none;
     color: #64b5ff;
 }
+
+
+
+
+
+
+.privacy-page{
+    padding:120px 10%;
+    color:#fff;
+    min-height:100vh;
+}
+
+.privacy-page h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.privacy-page h2{
+    margin-top:35px;
+    margin-bottom:15px;
+}
+
+.privacy-page p,
+.privacy-page li{
+    line-height:1.9;
+    color:#cfcfcf;
+}
+
+.privacy-page ul{
+    margin-left:20px;
+}
+
+.privacy-page .btn{
+    margin-top:35px;
+    display:inline-block;
+}
