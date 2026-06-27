@@ -483,7 +483,7 @@ body{
 }
 .contact-card a{
     color: #fff;
-    t
+    text-decoration: none;
 }
 @media (max-width:768px){
 
@@ -718,4 +718,16 @@ body{
     background:linear-gradient(90deg,#38bdf8,#0ea5e9);
     z-index:99999;
     box-shadow:0 0 15px #38bdf8;
+}
+a{
+    text-decoration: none;
+}
+.contact-card a{
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.contact-card a:hover{
+    text-decoration: none;
+    color: #64b5ff;
 }
