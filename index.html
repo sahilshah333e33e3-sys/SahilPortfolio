@@ -218,24 +218,26 @@
                 <p>Available</p>
             </div>
         </div>
-        <form action="https://formspree.io/f/xgojkqdv " method="POST">
-            <input type="hidden" name="-captcha" value="false">
-            <input type="hidden" name="-subject" value="new portfolio">
-            <input type="hidden" name="-template" value="table">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="Phone Number">
-                <input type="text" placeholder="Subject">
-            </div>
-            <textarea placeholder="Write Your Message" required></textarea>
-            <button type="submit" class="btn">
-                <i class="fa-solid fa-paper-plane"></i>
-                Send Message
-            </button>
-        </form>
+        <form action="https://formspree.io/f/xgojkqdv" method="POST">
+    <input type="hidden" name="_subject" value="New Portfolio Contact">
+
+    <div class="input-box">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+    </div>
+
+    <div class="input-box">
+        <input type="text" name="phone" placeholder="Phone Number">
+        <input type="text" name="subject" placeholder="Subject">
+    </div>
+
+    <textarea name="message" placeholder="Write Your Message" required></textarea>
+
+    <button type="submit" class="btn">
+        <i class="fa-solid fa-paper-plane"></i>
+        Send Message
+    </button>
+</form>
     </div>
 </section>
       <!--footer page-->
