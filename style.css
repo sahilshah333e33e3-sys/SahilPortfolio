@@ -481,6 +481,10 @@ body{
 .contact form{
     width:70%;
 }
+.contact-card a{
+    color: #fff;
+    t
+}
 @media (max-width:768px){
 
     .contact-container{
