@@ -81,6 +81,26 @@ sr.reveal('.portfolio-box',{
     interval:200
 });
 
+sr.reveal('.experience-card',{
+    origin:'bottom',
+    interval:200
+});
+
+sr.reveal('.testimonial-card',{
+    origin:'bottom',
+    interval:200
+});
+
+sr.reveal('.certificate-card',{
+    origin:'bottom',
+    interval:200
+});
+
+sr.reveal('.faq-item',{
+    origin:'bottom',
+    interval:150
+});
+
 sr.reveal('.contact-card',{
     origin:'top',
     interval:150
@@ -147,3 +167,144 @@ window.addEventListener("scroll", () => {
     progressBar.style.width = progress + "%";
 
 });
+
+const statsSection = document.querySelector('.counter');
+const counterValues = document.querySelectorAll('.counter-value');
+let hasCounted = false;
+
+function animateCounters(){
+    counterValues.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 1500;
+        const stepTime = Math.max(Math.floor(duration / target), 20);
+        let current = 0;
+
+        const counterInterval = setInterval(() => {
+            current += 1;
+            counter.innerText = current;
+            if(current >= target){
+                counter.innerText = target;
+                clearInterval(counterInterval);
+            }
+        }, stepTime);
+    });
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting && !hasCounted){
+            hasCounted = true;
+            animateCounters();
+            statsObserver.unobserve(statsSection);
+        }
+    });
+}, { threshold: 0.5 });
+
+if(statsSection){
+    statsObserver.observe(statsSection);
+}
+
+const contactForm = document.querySelector('.contact-form');
+const formStatus = document.querySelector('.form-status');
+const submitButton = document.querySelector('.submit-btn');
+
+function showFormStatus(message, type){
+    if(!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
+    formStatus.style.display = 'block';
+}
+
+function resetFormStatus(){
+    if(!formStatus) return;
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+    formStatus.style.display = 'none';
+}
+
+function setLoading(isLoading){
+    if(!submitButton) return;
+    submitButton.disabled = isLoading;
+    submitButton.classList.toggle('loading', isLoading);
+}
+
+function validateField(field){
+    if(!field) return false;
+    const value = field.value.trim();
+    if(!value) return false;
+    if(field.type === 'email'){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+    return true;
+}
+
+if(contactForm){
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if(!formStatus || !submitButton) return;
+        resetFormStatus();
+
+        const nameField = contactForm.querySelector('#name');
+        const emailField = contactForm.querySelector('#email');
+        const subjectField = contactForm.querySelector('#subject');
+        const messageField = contactForm.querySelector('#message');
+
+        [nameField, emailField, subjectField, messageField].forEach(field => {
+            if(field){
+                field.setAttribute('aria-invalid', 'false');
+            }
+        });
+
+        let valid = true;
+
+        if(!validateField(nameField)){
+            valid = false;
+            nameField.setAttribute('aria-invalid', 'true');
+        }
+        if(!validateField(emailField)){
+            valid = false;
+            emailField.setAttribute('aria-invalid', 'true');
+        }
+        if(!validateField(subjectField)){
+            valid = false;
+            subjectField.setAttribute('aria-invalid', 'true');
+        }
+        if(!validateField(messageField)){
+            valid = false;
+            messageField.setAttribute('aria-invalid', 'true');
+        }
+
+        if(!valid){
+            showFormStatus('Please complete all required fields with valid information.', 'error');
+            return;
+        }
+
+        setLoading(true);
+        showFormStatus('Sending message…', 'success');
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if(response.ok){
+                showFormStatus('Your message has been sent successfully. I will reply shortly.', 'success');
+                contactForm.reset();
+            } else {
+                const data = await response.json();
+                showFormStatus(data.error || 'Something went wrong. Please try again later.', 'error');
+            }
+        } catch (error) {
+            showFormStatus('Network error. Please check your connection and try again.', 'error');
+        } finally {
+            setLoading(false);
+        }
+    });
+}
+

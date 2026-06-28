@@ -61,10 +61,14 @@
 </head>
 
 <body>
-    <div id="progress-bar"></div>
+    <a href="#home" class="skip-link">Skip to main content</a>
+    <div id="page-loader" aria-hidden="true">
+        <div class="loader-ring"></div>
+    </div>
+    <div id="progress-bar" aria-hidden="true"></div>
     <header class="header">
-        <nav class="navbar">
-            <a href="#" class="logo">Sahil.</a>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="logo">Sahil.</a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -72,12 +76,12 @@
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-btn" id="menu-btn"> 
+            <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="theme-btn" id="theme-btn">
-            <i class="fa-solid fa-moon"></i>
-             </div>
+            </button>
+            <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
         </nav>
     </header>
 
@@ -107,7 +111,7 @@
         
     <section class="about" id="about">
     <div class="about-img">
-        <img src="2.jpg" alt="About">
+        <img src="2.jpg" alt="About" loading="lazy" decoding="async">
     </div>
     <div class="about-content">
         <h2>About <span>Me</span></h2>
@@ -149,7 +153,7 @@
     <h2 class="section-title">Latest <span>Projects</span></h2>
     <div class="portfolio-container">
         <article class="portfolio-card">
-            <img src="1.webp" alt="Modern responsive website project preview">
+            <img src="1.webp" alt="Modern responsive website project preview" loading="lazy" decoding="async">
             <div class="portfolio-card__content">
                 <h3>Responsive Business Website</h3>
                 <p>Clean, modern landing page crafted with smooth interactions and a polished user experience.</p>
@@ -165,7 +169,7 @@
             </div>
         </article>
         <article class="portfolio-card">
-            <img src="2.webp" alt="Creative landing page project preview">
+            <img src="2.webp" alt="Creative landing page project preview" loading="lazy" decoding="async">
             <div class="portfolio-card__content">
                 <h3>Creative Landing Page</h3>
                 <p>Elegant UI concept designed to highlight services, testimonials, and strong conversion-focused sections.</p>
@@ -181,7 +185,7 @@
             </div>
         </article>
         <article class="portfolio-card">
-            <img src="3.webp" alt="Personal portfolio project preview">
+            <img src="3.webp" alt="Personal portfolio project preview" loading="lazy" decoding="async">
             <div class="portfolio-card__content">
                 <h3>Professional Portfolio</h3>
                 <p>Modern personal portfolio focused on professionalism, clarity, and a seamless browsing experience.</p>
@@ -292,103 +296,336 @@
 
     </div>
 </section>
-<section class="counter">
-
-    <div class="counter-box">
-        <h2>20+</h2>
-        <p>Projects</p>
+<section class="experience" id="experience">
+    <h2 class="section-title">Work <span>Experience</span></h2>
+    <div class="experience-container">
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            <article class="experience-card">
+                <span class="experience-badge">2024 - Present</span>
+                <h3>Front-End Web Developer</h3>
+                <p>Building responsive, modern, and user-friendly websites using HTML, CSS, JavaScript, Bootstrap, PHP, and GitHub.</p>
+            </article>
+            <article class="experience-card">
+                <span class="experience-badge">2025 - Present</span>
+                <h3>Freelance Web Developer</h3>
+                <p>Creating portfolio websites, business websites, landing pages, and responsive web applications for clients.</p>
+            </article>
+            <article class="experience-card">
+                <span class="experience-badge">2025 - Present</span>
+                <h3>UI/UX Designer</h3>
+                <p>Designing clean, modern, and responsive user interfaces with a focus on user experience.</p>
+            </article>
+        </div>
     </div>
-
-    <div class="counter-box">
-        <h2>20+</h2>
-        <p>Happy Clients</p>
+</section>
+<section class="testimonials" id="testimonials">
+    <h2 class="section-title">Client <span>Testimonials</span></h2>
+    <div class="testimonials-container">
+        <article class="testimonial-card">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>“Sahil delivered an outstanding website with a modern design, excellent responsiveness, and fast performance. Highly recommended.”</p>
+            <h3>Ahmed Khan</h3>
+            <span>Business Owner</span>
+        </article>
+        <article class="testimonial-card">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>“Professional work, clean code, and timely delivery. Communication was excellent throughout the project.”</p>
+            <h3>Ali Raza</h3>
+            <span>Startup Founder</span>
+        </article>
+        <article class="testimonial-card">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>“Amazing attention to detail and a beautiful user experience. I would definitely work with Sahil again.”</p>
+            <h3>Sarah Ahmed</h3>
+            <span>UI/UX Designer</span>
+        </article>
     </div>
-
-    <div class="counter-box">
-        <h2>3+</h2>
-        <p>Years Experience</p>
+</section>
+<section class="counter" id="statistics">
+    <h2 class="section-title">Statistics <span>Counter</span></h2>
+    <div class="counter-grid">
+        <article class="counter-box">
+            <i class="fa-solid fa-folder-open counter-icon"></i>
+            <h2><span class="counter-value" data-target="20">0</span>+</h2>
+            <p>Completed Projects</p>
+        </article>
+        <article class="counter-box">
+            <i class="fa-solid fa-users counter-icon"></i>
+            <h2><span class="counter-value" data-target="15">0</span>+</h2>
+            <p>Happy Clients</p>
+        </article>
+        <article class="counter-box">
+            <i class="fa-solid fa-award counter-icon"></i>
+            <h2><span class="counter-value" data-target="2">0</span>+</h2>
+            <p>Years of Experience</p>
+        </article>
+        <article class="counter-box">
+            <i class="fa-solid fa-heart counter-icon"></i>
+            <h2><span class="counter-value" data-target="100">0</span>%</h2>
+            <p>Client Satisfaction</p>
+        </article>
     </div>
-
-    <div class="counter-box">
-        <h2>100%</h2>
-        <p>Client Satisfaction</p>
+</section>
+<section class="certificates" id="certificates">
+    <h2 class="section-title">Certificates <span>& Achievements</span></h2>
+    <div class="certificates-container">
+        <article class="certificate-card">
+            <div class="certificate-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="certificate-content">
+                <h3>Front-End Web Development</h3>
+                <span>Self Learning · 2025</span>
+                <p>Completed a hands-on certificate focused on modern front-end web development techniques and best practices.</p>
+                <a href="#" class="btn">View Certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <div class="certificate-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <div class="certificate-content">
+                <h3>Responsive Web Design</h3>
+                <span>Self Learning · 2025</span>
+                <p>Learned responsive layout design and mobile-first development for clean, adaptable web experiences.</p>
+                <a href="#" class="btn">View Certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <div class="certificate-icon">
+                <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="certificate-content">
+                <h3>JavaScript Essentials</h3>
+                <span>Self Learning · 2025</span>
+                <p>Studied core JavaScript fundamentals, interactive UI behavior, and dynamic web application logic.</p>
+                <a href="#" class="btn">View Certificate</a>
+            </div>
+        </article>
+        <article class="certificate-card">
+            <div class="certificate-icon">
+                <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="certificate-content">
+                <h3>Git &amp; GitHub</h3>
+                <span>Self Learning · 2025</span>
+                <p>Developed version control skills and streamlined collaboration using Git and GitHub workflows.</p>
+                <a href="#" class="btn">View Certificate</a>
+            </div>
+        </article>
     </div>
-
+</section>
+<section class="faq" id="faq">
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    <div class="faq-container">
+        <article class="faq-item active">
+            <button class="faq-question">
+                <span>What services do you provide?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>I build modern, responsive, and high-performance websites, landing pages, portfolio websites, business websites, and front-end web applications.</p>
+            </div>
+        </article>
+        <article class="faq-item">
+            <button class="faq-question">
+                <span>Which technologies do you use?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>I work with HTML5, CSS3, JavaScript, Bootstrap, PHP, Git, GitHub, Responsive Design, and UI/UX principles.</p>
+            </div>
+        </article>
+        <article class="faq-item">
+            <button class="faq-question">
+                <span>Do you create responsive websites?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes. Every website I build is fully responsive and optimized for desktop, tablet, and mobile devices.</p>
+            </div>
+        </article>
+        <article class="faq-item">
+            <button class="faq-question">
+                <span>Can you redesign an existing website?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes. I can redesign old websites into modern, fast, responsive, and user-friendly websites.</p>
+            </div>
+        </article>
+        <article class="faq-item">
+            <button class="faq-question">
+                <span>How can I contact you?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>You can contact me through the Contact section or by email for project discussions.</p>
+            </div>
+        </article>
+    </div>
 </section>
       <!--contact page-->
       <section class="contact" id="contact">
     <h2 class="section-title">Contact <span>Me</span></h2>
     <div class="contact-container">
-        <div class="contact-cards">
-            <div class="contact-card">
-                <i class="fa-solid fa-phone"></i>
-                <h3>Phone</h3>
-                <p>+92 3132916944</p>
+        <div class="contact-panel contact-info-panel">
+            <div class="contact-card info-card">
+                <h3>Contact Information</h3>
+                <p>Reach out for a fast response on your next website, landing page, or web application project.</p>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+92 3132916944</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:sahilshah333e33e3@gmail.com">sahilshah333e33e3@gmail.com</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Karachi, Pakistan</p>
+                    </div>
+                </div>
+                <div class="contact-social">
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
-            <div class="contact-card">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Email</h3>
-               <a href="mailto:sahilshah333e33e3@gmail.com">sahilshah333e33e3@gmail.com</a>
+            <div class="contact-card working-hours-card">
+                <h3>Working Hours</h3>
+                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                <p>Sat: 10:00 AM - 2:00 PM</p>
             </div>
-            <div class="contact-card">
-                <i class="fa-solid fa-location-dot"></i>
-                <h3>Location</h3>
-                <p>Karachi, Pakistan</p>
-            </div>
-            <div class="contact-card">
-                <i class="fa-solid fa-briefcase"></i>
-                <h3>Freelance</h3>
-                <p>Available</p>
+            <div class="contact-card quick-response-card">
+                <h3>Quick Response</h3>
+                <p>I respond quickly to messages and project inquiries. Let's start your next web project with clear communication and fast delivery.</p>
             </div>
         </div>
-        <form action="https://formspree.io/f/xgojkqdv" method="POST">
-    <input type="hidden" name="_subject" value="New Portfolio Contact">
-
-    <div class="input-box">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-    </div>
-
-    <div class="input-box">
-        <input type="text" name="phone" placeholder="Phone Number">
-        <input type="text" name="subject" placeholder="Subject">
-    </div>
-
-    <textarea name="message" placeholder="Write Your Message" required></textarea>
-
-    <button type="submit" class="btn">
-        <i class="fa-solid fa-paper-plane"></i>
-        Send Message
-    </button>
-</form>
+        <div class="contact-panel">
+            <form class="contact-form" action="https://formspree.io/f/xgojkqdv" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="New Portfolio Contact">
+                <div class="form-status" role="status" aria-live="polite"></div>
+                <div class="input-group">
+                    <label class="sr-only" for="name">Full Name</label>
+                    <i class="fa-solid fa-user"></i>
+                    <input id="name" type="text" name="name" placeholder="Full Name" required aria-required="true">
+                </div>
+                <div class="input-group">
+                    <label class="sr-only" for="email">Email Address</label>
+                    <i class="fa-solid fa-envelope"></i>
+                    <input id="email" type="email" name="email" placeholder="Email Address" required aria-required="true">
+                </div>
+                <div class="input-group">
+                    <label class="sr-only" for="subject">Subject</label>
+                    <i class="fa-solid fa-heading"></i>
+                    <input id="subject" type="text" name="subject" placeholder="Subject" required aria-required="true">
+                </div>
+                <div class="input-group textarea-group">
+                    <label class="sr-only" for="message">Message</label>
+                    <i class="fa-solid fa-message"></i>
+                    <textarea id="message" name="message" placeholder="Message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">
+                    <span class="btn-loader" aria-hidden="true"></span>
+                    <span class="btn-text">Send Message</span>
+                </button>
+            </form>
+        </div>
     </div>
 </section>
       <!--footer page-->
 
 <footer class="footer">
-    <div class="footer-text">
-        <h3>Sahil Shah</h3>
-        <p>Frontend Developer | JavaScript Developer</p>
+    <div class="footer-grid">
+        <div class="footer-column footer-brand">
+            <a href="#home" class="footer-logo">Sahil Shah</a>
+            <p>Front-end web developer crafting responsive, premium websites with polished UI, clean code, and strong user experiences.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul class="footer-list">
+                <li><a href="#services">Front-End Development</a></li>
+                <li><a href="#services">Responsive Web Design</a></li>
+                <li><a href="#services">Landing Pages</a></li>
+                <li><a href="#services">Portfolio Websites</a></li>
+                <li><a href="#services">Website Redesign</a></li>
+            </ul>
+        </div>
+        <div class="footer-column footer-contact-column">
+            <h3>Contact Info</h3>
+            <div class="footer-contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:sahilshah333e33e3@gmail.com">sahilshah333e33e3@gmail.com</a>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>+92 3132916944</p>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Karachi, Pakistan</p>
+            </div>
+            <div class="footer-social footer-social-footer">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="footer-social">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-    </div>
-
     <div class="footer-bottom">
-        <p>© 2026 All Rights Reserved</p>
-        <div class="footer-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="disclaimer.html">Disclaimer</a>
-    </div>
+        <p>© 2026 Sahil Shah. All Rights Reserved.</p>
+        <p>Designed & Developed by Sahil Shah</p>
         <a href="#home" class="top-btn">
             <i class="fa-solid fa-arrow-up"></i>
         </a>
     </div>
 </footer>
+<a href="#home" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
  
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="script.js"></script>
