@@ -2,7 +2,8 @@ const menuBtn = document.getElementById("menu-btn");
 const navMenu = document.getElementById("nav-menu");
 
 menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+    const isOpen = navMenu.classList.toggle("active");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
 });
 
 const header = document.querySelector(".header");
@@ -101,6 +102,11 @@ sr.reveal('.faq-item',{
     interval:150
 });
 
+sr.reveal('.hire-card',{
+    origin:'bottom',
+    interval:150
+});
+
 sr.reveal('.contact-card',{
     origin:'top',
     interval:150
@@ -122,6 +128,15 @@ themeBtn.onclick = () => {
 }
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-menu a");
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
 
 window.addEventListener("scroll", () => {
 
@@ -155,6 +170,13 @@ window.addEventListener("scroll", () => {
 
 });
 const progressBar = document.getElementById("progress-bar");
+const scrollTopBtn = document.querySelector('.scroll-top-btn');
+
+
+function updateScrollTopVisibility() {
+    if (!scrollTopBtn) return;
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 450);
+}
 
 window.addEventListener("scroll", () => {
 
@@ -165,7 +187,28 @@ window.addEventListener("scroll", () => {
     let progress = (scroll / height) * 100;
 
     progressBar.style.width = progress + "%";
+    updateScrollTopVisibility();
 
+});
+
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+window.addEventListener('load', () => {
+    const pageLoader = document.getElementById('page-loader');
+    if (pageLoader) {
+        pageLoader.classList.add('loaded');
+        pageLoader.setAttribute('aria-hidden', 'true');
+    }
+    document.body.classList.remove('page-loading');
+    updateScrollTopVisibility();
 });
 
 const statsSection = document.querySelector('.counter');
