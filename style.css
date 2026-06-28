@@ -800,3 +800,26 @@ body{
 .footer-links a:hover{
     color: #00abf0;
 }
+.hero-image{
+    max-width: 100%;
+    height: auto;
+}
+.progress.nodejs{
+    width:70%;
+}
+
+.progress.analytics{
+    width:80%;
+}
+
+.progress.git{
+    width:85%;
+}
+
+.progress.github{
+    width:90%;
+}
+
+.progress.uiux{
+    width:75%;
+}
