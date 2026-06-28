@@ -240,6 +240,7 @@ img.loaded{
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid #38bdf8;
+    
 }
 
 .hero-image img.loaded{
@@ -2054,4 +2055,20 @@ body,
 
 .progress.uiux{
     width:75%;
+}
+.hero-image{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.hero-image img{
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    position: relative !important;
+    z-index: 9999 !important;
 }
