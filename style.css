@@ -2089,3 +2089,38 @@ body,
     position: relative !important;
     z-index: 9999 !important;
 }
+.about-img{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.about-img img{
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
+.portfolio-card{
+    opacity:0;
+    transform:translateY(40px);
+    animation:cardFade .8s ease forwards;
+}
+
+.portfolio-card:nth-child(1){animation-delay:.1s;}
+.portfolio-card:nth-child(2){animation-delay:.2s;}
+.portfolio-card:nth-child(3){animation-delay:.3s;}
+.portfolio-card:nth-child(4){animation-delay:.4s;}
+.portfolio-card:nth-child(5){animation-delay:.5s;}
+
+@keyframes cardFade{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
