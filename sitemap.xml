@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://sahilshahportfolio.com/</loc>
-        <lastmod>2026-06-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <url>
+    <loc>https://sahilshahportfolio.com/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://sahilshahportfolio.com/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://sahilshahportfolio.com/terms.html</loc>
+  </url>
+
+  <url>
+    <loc>https://sahilshahportfolio.com/disclaimer.html</loc>
+  </url>
 
 </urlset>
