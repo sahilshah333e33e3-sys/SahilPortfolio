@@ -290,9 +290,9 @@ const contactForm = document.querySelector('.contact-form');
 const formStatus = document.querySelector('.form-status');
 const submitButton = document.querySelector('.submit-btn');
 
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'service_2azbvls';
+const EMAILJS_TEMPLATE_ID = 'template_6383f6i';
+const EMAILJS_PUBLIC_KEY = 'Thw09a1dhcZii5M0A';
 
 if (window.emailjs && EMAILJS_PUBLIC_KEY) {
     emailjs.init(EMAILJS_PUBLIC_KEY);
