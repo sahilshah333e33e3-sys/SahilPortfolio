@@ -346,6 +346,23 @@ img.loaded{
     display:flex;
     justify-content:center;
 }
+.about-img{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.about-img img{
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
 .about-img img{
     width:350px;
     height:350px;
