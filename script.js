@@ -77,12 +77,40 @@ sr.reveal('.service-box',{
     interval:200
 });
 
+sr.reveal('.service-card',{
+    origin:'bottom',
+    interval:200
+});
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.portfolio-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        projectCards.forEach(card => {
+            const techList = card.dataset.tech ? card.dataset.tech.split(' ') : [];
+            const matches = filter === 'all' || techList.includes(filter);
+            card.classList.toggle('filtered-out', !matches);
+        });
+    });
+});
+
 sr.reveal('.portfolio-box',{
     origin:'bottom',
     interval:200
 });
 
 sr.reveal('.experience-card',{
+    origin:'bottom',
+    interval:200
+});
+
+sr.reveal('.blog-card',{
     origin:'bottom',
     interval:200
 });
@@ -117,15 +145,26 @@ sr.reveal('.contact form',{
 });
 const themeBtn = document.getElementById("theme-btn");
 
-themeBtn.onclick = () => {
-    document.body.classList.toggle("light-mode");
-
-    if(document.body.classList.contains("light-mode")){
-        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    }else{
-        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    }
+function applyTheme(theme) {
+    const light = theme === 'light';
+    document.body.classList.toggle('light-mode', light);
+    themeBtn.innerHTML = light ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+    themeBtn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
 }
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    applyTheme('light');
+}
+
+themeBtn.addEventListener('click', () => {
+    const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+    applyTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+});
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -251,6 +290,14 @@ const contactForm = document.querySelector('.contact-form');
 const formStatus = document.querySelector('.form-status');
 const submitButton = document.querySelector('.submit-btn');
 
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+if (window.emailjs && EMAILJS_PUBLIC_KEY) {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
 function showFormStatus(message, type){
     if(!formStatus) return;
     formStatus.textContent = message;
@@ -287,6 +334,12 @@ if(contactForm){
         if(!formStatus || !submitButton) return;
         resetFormStatus();
 
+        const honeypotField = contactForm.querySelector('input[name="hp"]');
+        if(honeypotField && honeypotField.value.trim() !== ''){
+            showFormStatus('Spam detected. Please try again.', 'error');
+            return;
+        }
+
         const nameField = contactForm.querySelector('#name');
         const emailField = contactForm.querySelector('#email');
         const subjectField = contactForm.querySelector('#subject');
@@ -322,29 +375,28 @@ if(contactForm){
             return;
         }
 
+        if (!window.emailjs || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+            showFormStatus('Email service is not configured yet. Please contact me directly.', 'error');
+            return;
+        }
+
         setLoading(true);
         showFormStatus('Sending message…', 'success');
 
-        const formData = new FormData(contactForm);
+        const templateParams = {
+            name: nameField.value.trim(),
+            email: emailField.value.trim(),
+            subject: subjectField.value.trim(),
+            message: messageField.value.trim(),
+            reply_to: emailField.value.trim()
+        };
 
         try {
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if(response.ok){
-                showFormStatus('Your message has been sent successfully. I will reply shortly.', 'success');
-                contactForm.reset();
-            } else {
-                const data = await response.json();
-                showFormStatus(data.error || 'Something went wrong. Please try again later.', 'error');
-            }
+            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+            showFormStatus('Your message has been sent successfully. I will reply shortly.', 'success');
+            contactForm.reset();
         } catch (error) {
-            showFormStatus('Network error. Please check your connection and try again.', 'error');
+            showFormStatus('Unable to send message. Please try again later.', 'error');
         } finally {
             setLoading(false);
         }

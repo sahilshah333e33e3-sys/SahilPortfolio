@@ -124,6 +124,41 @@
         <a href="#" class="btn">Read More</a>
     </div>
    </section>
+<section class="services-modern" id="services-modern">
+    <h2 class="section-title">Services <span>Overview</span></h2>
+    <div class="services-modern-grid">
+        <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Front-End Development</h3>
+            <p>Modern, responsive, and interactive websites using HTML, CSS, JavaScript, and Bootstrap.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Responsive Web Design</h3>
+            <p>Websites optimized for desktop, tablet, and mobile devices.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Landing Page Design</h3>
+            <p>High-converting landing pages for businesses and startups.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Portfolio Website</h3>
+            <p>Professional portfolio websites for developers, designers, and freelancers.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-refresh"></i></div>
+            <h3>Website Redesign</h3>
+            <p>Transform outdated websites into modern and fast experiences.</p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Performance & SEO Optimization</h3>
+            <p>Improve website speed, accessibility, SEO, and user experience.</p>
+        </article>
+    </div>
+   </section>
       <!--service page-->
    <section class="services" id="services">
     <h2 class="section-title">My <span>Services</span></h2>
@@ -151,49 +186,139 @@
      
       <section class="portfolio" id="portfolio">
     <h2 class="section-title">Latest <span>Projects</span></h2>
+    <div class="project-filters">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="html">HTML</button>
+        <button type="button" class="filter-btn" data-filter="css">CSS</button>
+        <button type="button" class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button type="button" class="filter-btn" data-filter="php">PHP</button>
+        <button type="button" class="filter-btn" data-filter="bootstrap">Bootstrap</button>
+    </div>
     <div class="portfolio-container">
-        <article class="portfolio-card">
-            <img src="1.webp" alt="Modern responsive website project preview" loading="lazy" decoding="async">
+        <article class="portfolio-card" data-tech="html css javascript">
+            <div class="portfolio-image" role="img" aria-label="Business website dashboard screenshot"></div>
             <div class="portfolio-card__content">
-                <h3>Responsive Business Website</h3>
-                <p>Clean, modern landing page crafted with smooth interactions and a polished user experience.</p>
+                <span class="portfolio-category">Business Website</span>
+                <h3>Corporate Business Platform</h3>
+                <p>A polished business website with clear CTAs, modern layout, and a fully responsive design for corporate clients.</p>
+                <div class="portfolio-card__details">
+                    <span>Completion: Jan 2026</span>
+                    <span>Category: Business Website</span>
+                </div>
                 <div class="portfolio-card__tags">
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
+                <ul class="portfolio-card__features">
+                    <li>Interactive service showcase</li>
+                    <li>Lead capture form integration</li>
+                    <li>Animated section transitions</li>
+                </ul>
                 <div class="portfolio-card__buttons">
                     <a href="https://sahilshahportfolio.com/" class="btn">Live Demo</a>
                     <a href="https://github.com/" class="btn btn-outline">GitHub</a>
                 </div>
             </div>
         </article>
-        <article class="portfolio-card">
-            <img src="2.webp" alt="Creative landing page project preview" loading="lazy" decoding="async">
+        <article class="portfolio-card" data-tech="html css javascript">
+            <div class="portfolio-image" role="img" aria-label="Portfolio website screenshot"></div>
             <div class="portfolio-card__content">
-                <h3>Creative Landing Page</h3>
-                <p>Elegant UI concept designed to highlight services, testimonials, and strong conversion-focused sections.</p>
-                <div class="portfolio-card__tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Bootstrap</span>
+                <span class="portfolio-category">Portfolio Website</span>
+                <h3>Creative Personal Portfolio</h3>
+                <p>A premium portfolio site designed for creatives, featuring smooth animations, project highlights, and strong personal branding.</p>
+                <div class="portfolio-card__details">
+                    <span>Completion: Mar 2026</span>
+                    <span>Category: Portfolio Website</span>
                 </div>
-                <div class="portfolio-card__buttons">
-                    <a href="https://sahilshahportfolio.com/" class="btn">Live Demo</a>
-                    <a href="https://github.com/" class="btn btn-outline">GitHub</a>
-                </div>
-            </div>
-        </article>
-        <article class="portfolio-card">
-            <img src="3.webp" alt="Personal portfolio project preview" loading="lazy" decoding="async">
-            <div class="portfolio-card__content">
-                <h3>Professional Portfolio</h3>
-                <p>Modern personal portfolio focused on professionalism, clarity, and a seamless browsing experience.</p>
                 <div class="portfolio-card__tags">
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>Animation</span>
                 </div>
+                <ul class="portfolio-card__features">
+                    <li>Custom portfolio gallery</li>
+                    <li>Interactive skill sections</li>
+                    <li>Smooth scroll navigation</li>
+                </ul>
+                <div class="portfolio-card__buttons">
+                    <a href="https://sahilshahportfolio.com/" class="btn">Live Demo</a>
+                    <a href="https://github.com/" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </article>
+        <article class="portfolio-card" data-tech="html css bootstrap">
+            <div class="portfolio-image" role="img" aria-label="Landing page screenshot"></div>
+            <div class="portfolio-card__content">
+                <span class="portfolio-category">Landing Page</span>
+                <h3>Conversion-Driven Landing Page</h3>
+                <p>A high-converting landing page crafted for startups, designed to improve lead generation with clean storytelling and clear actions.</p>
+                <div class="portfolio-card__details">
+                    <span>Completion: May 2026</span>
+                    <span>Category: Landing Page</span>
+                </div>
+                <div class="portfolio-card__tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Bootstrap</span>
+                </div>
+                <ul class="portfolio-card__features">
+                    <li>Responsive hero section</li>
+                    <li>Feature highlights</li>
+                    <li>CTA-focused design</li>
+                </ul>
+                <div class="portfolio-card__buttons">
+                    <a href="https://sahilshahportfolio.com/" class="btn">Live Demo</a>
+                    <a href="https://github.com/" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </article>
+        <article class="portfolio-card" data-tech="html css javascript">
+            <div class="portfolio-image" role="img" aria-label="Dashboard screenshot"></div>
+            <div class="portfolio-card__content">
+                <span class="portfolio-category">Dashboard</span>
+                <h3>Analytics Dashboard</h3>
+                <p>A clean dashboard interface with charts, metrics, and data summaries for business intelligence and performance monitoring.</p>
+                <div class="portfolio-card__details">
+                    <span>Completion: Jul 2026</span>
+                    <span>Category: Dashboard</span>
+                </div>
+                <div class="portfolio-card__tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <ul class="portfolio-card__features">
+                    <li>Data visualizations</li>
+                    <li>Responsive grid layout</li>
+                    <li>Interactive widgets</li>
+                </ul>
+                <div class="portfolio-card__buttons">
+                    <a href="https://sahilshahportfolio.com/" class="btn">Live Demo</a>
+                    <a href="https://github.com/" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </article>
+        <article class="portfolio-card" data-tech="html css javascript php">
+            <div class="portfolio-image" role="img" aria-label="E-commerce website screenshot"></div>
+            <div class="portfolio-card__content">
+                <span class="portfolio-category">E-commerce</span>
+                <h3>Modern Online Shop</h3>
+                <p>An e-commerce storefront designed for product discovery, fast checkout, and responsive shopping across all devices.</p>
+                <div class="portfolio-card__details">
+                    <span>Completion: Sep 2026</span>
+                    <span>Category: E-commerce</span>
+                </div>
+                <div class="portfolio-card__tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <ul class="portfolio-card__features">
+                    <li>Product cards and filters</li>
+                    <li>Responsive checkout flow</li>
+                    <li>Modern UI elements</li>
+                </ul>
                 <div class="portfolio-card__buttons">
                     <a href="https://sahilshahportfolio.com/" class="btn">Live Demo</a>
                     <a href="https://github.com/" class="btn btn-outline">GitHub</a>
@@ -487,50 +612,35 @@
         </article>
     </div>
 </section>
-<section class="why-hire" id="why-hire">
-    <h2 class="section-title">Why <span>Hire Me</span></h2>
-    <div class="hire-grid">
-        <article class="hire-card">
-            <div class="hire-icon">
-                <i class="fa-solid fa-code"></i>
+<section class="blog" id="blog">
+    <h2 class="section-title">Latest <span>Articles</span></h2>
+    <div class="blog-grid">
+        <article class="blog-card">
+            <div class="blog-image" aria-hidden="true"></div>
+            <div class="blog-card-content">
+                <span class="blog-category">Web Development</span>
+                <h3>Why Every Business Needs a Professional Website</h3>
+                <p>A professional website builds trust, boosts credibility, and turns visitors into customers.</p>
+                <a href="#" class="btn">Read More</a>
             </div>
-            <h3>Clean Code</h3>
-            <p>I write clean, maintainable, and scalable code following best practices.</p>
         </article>
-        <article class="hire-card">
-            <div class="hire-icon">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+        <article class="blog-card">
+            <div class="blog-image" aria-hidden="true"></div>
+            <div class="blog-card-content">
+                <span class="blog-category">Programming</span>
+                <h3>Top 10 Front-End Development Tips</h3>
+                <p>Essential front-end tips for cleaner code, better performance, and more polished websites.</p>
+                <a href="#" class="btn">Read More</a>
             </div>
-            <h3>Responsive Design</h3>
-            <p>Every website is fully responsive and optimized for all screen sizes.</p>
         </article>
-        <article class="hire-card">
-            <div class="hire-icon">
-                <i class="fa-solid fa-rocket"></i>
+        <article class="blog-card">
+            <div class="blog-image" aria-hidden="true"></div>
+            <div class="blog-card-content">
+                <span class="blog-category">UI/UX</span>
+                <h3>How Responsive Design Improves User Experience</h3>
+                <p>Discover why responsiveness is critical for engagement, accessibility, and conversions.</p>
+                <a href="#" class="btn">Read More</a>
             </div>
-            <h3>Fast Performance</h3>
-            <p>Websites are optimized for speed, SEO, and user experience.</p>
-        </article>
-        <article class="hire-card">
-            <div class="hire-icon">
-                <i class="fa-solid fa-brush"></i>
-            </div>
-            <h3>Modern UI/UX</h3>
-            <p>Beautiful, user-friendly interfaces with smooth animations.</p>
-        </article>
-        <article class="hire-card">
-            <div class="hire-icon">
-                <i class="fa-solid fa-chart-line"></i>
-            </div>
-            <h3>SEO Optimized</h3>
-            <p>Websites are built with modern SEO best practices.</p>
-        </article>
-        <article class="hire-card">
-            <div class="hire-icon">
-                <i class="fa-solid fa-headset"></i>
-            </div>
-            <h3>Ongoing Support</h3>
-            <p>I provide support after project completion when needed.</p>
         </article>
     </div>
 </section>
@@ -581,30 +691,31 @@
             </div>
         </div>
         <div class="contact-panel">
-            <form class="contact-form" action="https://formspree.io/f/xgojkqdv" method="POST" novalidate>
+            <form class="contact-form" novalidate>
                 <input type="hidden" name="_subject" value="New Portfolio Contact">
+                <input type="text" name="hp" class="sr-only" autocomplete="off" tabindex="-1" aria-hidden="true">
                 <div class="form-status" role="status" aria-live="polite"></div>
                 <div class="input-group">
                     <label class="sr-only" for="name">Full Name</label>
                     <i class="fa-solid fa-user"></i>
-                    <input id="name" type="text" name="name" placeholder="Full Name" required aria-required="true">
+                    <input id="name" type="text" name="name" placeholder="Full Name" required aria-required="true" aria-label="Full Name">
                 </div>
                 <div class="input-group">
                     <label class="sr-only" for="email">Email Address</label>
                     <i class="fa-solid fa-envelope"></i>
-                    <input id="email" type="email" name="email" placeholder="Email Address" required aria-required="true">
+                    <input id="email" type="email" name="email" placeholder="Email Address" required aria-required="true" aria-label="Email Address">
                 </div>
                 <div class="input-group">
                     <label class="sr-only" for="subject">Subject</label>
                     <i class="fa-solid fa-heading"></i>
-                    <input id="subject" type="text" name="subject" placeholder="Subject" required aria-required="true">
+                    <input id="subject" type="text" name="subject" placeholder="Subject" required aria-required="true" aria-label="Subject">
                 </div>
                 <div class="input-group textarea-group">
                     <label class="sr-only" for="message">Message</label>
                     <i class="fa-solid fa-message"></i>
-                    <textarea id="message" name="message" placeholder="Message" required aria-required="true"></textarea>
+                    <textarea id="message" name="message" placeholder="Message" required aria-required="true" aria-label="Message"></textarea>
                 </div>
-                <button type="submit" class="btn submit-btn">
+                <button type="submit" class="btn submit-btn" aria-label="Send message">
                     <span class="btn-loader" aria-hidden="true"></span>
                     <span class="btn-text">Send Message</span>
                 </button>
@@ -673,7 +784,12 @@
 <a href="#home" class="scroll-top-btn" aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
 </a>
+<a href="https://wa.me/923132916944?text=Hello%20Sahil%2C%20I%20would%20like%20to%20chat%20about%20a%20project." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with me on WhatsApp">
+    <span class="whatsapp-tooltip">Chat with me</span>
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
  
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="script.js"></script>
 </body>
